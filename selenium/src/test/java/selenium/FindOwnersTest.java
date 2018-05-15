@@ -27,11 +27,11 @@ public class FindOwnersTest {
 		driver.findElement(By.id("address")).sendKeys("Industrigatan 9");
 		driver.findElement(By.id("city")).sendKeys("Stockholm");
 		driver.findElement(By.id("telephone")).sendKeys("070776655");
-		driver.findElement(By.xpath("//button")).click();
+		driver.findElement(By.className("btn-default")).click();
 		
 		driver.findElement(By.partialLinkText("Find owners")).click();
 		driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("von Essen");
-		driver.findElement(By.xpath("//button")).click();
+		driver.findElement(By.className("btn-default")).click();
 	
 		//driver.findElement(By.xpath("//tbody")).findElement(By.linkText("Rickard von Essen"));
 	}

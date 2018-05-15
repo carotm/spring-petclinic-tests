@@ -1,13 +1,13 @@
 # Petclinic Tests
 
-Additional tests for [Spring Petclinic](https://github.com/Diabol/spring-petclinic)
+Additional tests for [Spring Petclinic](https://github.com/spring-projects/spring-petclinic)
 
 ## Selenium
 
-Uses the HtmlUnit Driver or FireFox (requires FireFox).
+Uses the FireFox Driver (requires FireFox and geckodriver).
 Run with:
 ```
-./gradlew -Dbase.url=http://192.168.33.100:8080/petclinic -DbrowserType=htmlunit test
+cd selenium; gradle -Dbase.url=http://localhost:8080/petclinic - test
 ```
 
 ## Gatling

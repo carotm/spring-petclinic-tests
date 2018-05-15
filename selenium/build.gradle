@@ -1,6 +1,4 @@
 apply plugin: 'java'
-//apply plugin: 'idea'
-apply plugin: 'eclipse'
 group = 'petclinic.selenium'
 
 task wrapper(type: Wrapper) {
@@ -17,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.+'
     compile group: 'commons-collections', name: 'commons-collections', version: '3.+'
     compile group: 'junit', name: 'junit', version: '4.+'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
@@ -30,11 +28,8 @@ tasks.withType(Test) {
     testLogging.showStandardStreams = true
     
 	// System properties passed to tests
-	systemProperties = [
-		'base.url': System.getProperty('base.url', 'http://localhost:8080/petclinic'),
-		'browserType': System.getProperty('browserType', 'firefox')
-	]
-	
+	systemProperty 'base.url', project.properties['base.url']
+
 	// initial browser size and position
 	systemProperties['windowXPosition'] = '100'
 	systemProperties['windowYPosition'] = '40'
